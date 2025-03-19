@@ -1,0 +1,4 @@
+Flask
+google-cloud-bigquery
+functions-framework
+
