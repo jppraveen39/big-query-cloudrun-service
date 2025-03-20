@@ -42,30 +42,17 @@ docker push gcr.io/igneous-fold-344311/my-app:latest
 ```
 
 #### **Deploy to Cloud Run**
-##### **Publicly Accessible Deployment**
-```sh
-gcloud run deploy my-app \
-    --image gcr.io/igneous-fold-344311/my-app:latest \
-    --region=us-central1 \
-    --project=igneous-fold-344311
-```
 
-##### **Private Deployment (Requires Authentication)**
 ```sh
 gcloud run deploy my-app \
     --image gcr.io/igneous-fold-344311/my-app:latest \
     --region=us-central1 \
-    --no-allow-unauthenticated \
+    --allow-unauthenticated \
     --project=igneous-fold-344311
+
 ```
 
 ## API Endpoints
-
-### **Obtain an Access Token**
-Before making requests to the API, get an authentication token by running:
-```sh
-TOKEN=$(gcloud auth print-identity-token)
-```
 
 After deployment, your Cloud Run service URL will look like:
 ```
@@ -74,14 +61,12 @@ https://my-app-396977120295.us-central1.run.app
 
 ### **1. Fetch Records (GET Request)**
 ```sh
-curl -X GET https://my-app-396977120295.us-central1.run.app/fetch \
-     -H "Authorization: Bearer TOKEN"
+curl -X GET https://my-app-396977120295.us-central1.run.app/fetch
 ```
 
 ### **2. Insert Data (POST Request)**
 ```sh
 curl -X POST https://my-app-396977120295.us-central1.run.app/insert \
-     -H "Authorization: Bearer TOKEN" \
      -H "Content-Type: application/json" \
      -d '{"name": "Praveen", "age": 25, "email": "praveen2532@gmail.com"}'
 ```
@@ -89,7 +74,6 @@ curl -X POST https://my-app-396977120295.us-central1.run.app/insert \
 ### **3. Delete Record (DELETE Request)**
 ```sh
 curl -X DELETE https://my-app-396977120295.us-central1.run.app/delete \
-     -H "Authorization: Bearer TOKEN" \
      -H "Content-Type: application/json" \
      -d '{"name": "Praveen"}'
 ```
