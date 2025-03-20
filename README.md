@@ -75,13 +75,13 @@ https://my-app-396977120295.us-central1.run.app
 ### **1. Fetch Records (GET Request)**
 ```sh
 curl -X GET https://my-app-396977120295.us-central1.run.app/fetch \
-     -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+     -H "Authorization: Bearer TOKEN"
 ```
 
 ### **2. Insert Data (POST Request)**
 ```sh
 curl -X POST https://my-app-396977120295.us-central1.run.app/insert \
-     -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+     -H "Authorization: Bearer TOKEN" \
      -H "Content-Type: application/json" \
      -d '{"name": "Praveen", "age": 25, "email": "praveen2532@gmail.com"}'
 ```
@@ -89,7 +89,7 @@ curl -X POST https://my-app-396977120295.us-central1.run.app/insert \
 ### **3. Delete Record (DELETE Request)**
 ```sh
 curl -X DELETE https://my-app-396977120295.us-central1.run.app/delete \
-     -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+     -H "Authorization: Bearer TOKEN" \
      -H "Content-Type: application/json" \
      -d '{"name": "Praveen"}'
 ```
