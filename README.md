@@ -64,7 +64,7 @@ gcloud run deploy my-app \
 ### **Obtain an Access Token**
 Before making requests to the API, get an authentication token by running:
 ```sh
-gcloud auth print-access-token
+TOKEN=$(gcloud auth print-identity-token)
 ```
 
 After deployment, your Cloud Run service URL will look like:
