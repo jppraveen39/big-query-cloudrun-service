@@ -10,8 +10,8 @@ COPY requirements.txt .
 # Install dependencies with optimizations
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application files
-COPY . .
+# Copy the application files
+COPY main.py .
 
 # Expose port 8080 for Cloud Run
 EXPOSE 8080
