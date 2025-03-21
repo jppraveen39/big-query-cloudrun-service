@@ -81,5 +81,4 @@ curl -X DELETE https://my-app-396977120295.us-central1.run.app/delete \
 ## Conclusion
 This project provides a simple REST API to manage BigQuery tables and is deployed on **Cloud Run** for scalability and ease of use.
 
-Feel free to contribute and improve this repository!
 
